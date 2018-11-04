@@ -11,7 +11,7 @@ db.settings({
 	timestampsInSnapshots: true
 });
 
-let movePiece = (req, res) => {
+const movePiece = (req, res) => {
 	const game = req.body.game;
 	const dest_x = req.body.x;
 	const dest_y = req.body.y;
@@ -40,6 +40,8 @@ let movePiece = (req, res) => {
 	});
 };
 
-exports.movePiece = (req, res) => function() {
-	cors()(req, res, movePiece);
+exports.movePiece = (req, res) => {
+	cors()(req, res, () => {
+		movePiece(req, res);
+	});
 };

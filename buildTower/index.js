@@ -11,7 +11,7 @@ db.settings({
 	timestampsInSnapshots: true
 });
 
-let buildTower = (req, res) => {
+const buildTower = (req, res) => {
 	const gameId = req.body.game;
 	const x = req.body.x;
 	const y = req.body.y;
@@ -42,6 +42,8 @@ let buildTower = (req, res) => {
 	});
 };
 
-exports.buildTower = (req, res) => function() {
-	cors()(req, res, buildTower);
+exports.buildTower = (req, res) => {
+	cors()(req, res, () => {
+		buildTower(req, res);
+	});
 };
