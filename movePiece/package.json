@@ -1,8 +1,0 @@
-{
-	"name": "TowerIslandsMovePiece",
-	"version": "0.0.1",
-	"dependencies": {
-		"@google-cloud/firestore": "^0.18.0",
-		"cors": "^2.8.4"
-	}
-}

@@ -11,15 +11,16 @@ db.settings({
 	timestampsInSnapshots: true
 });
 
-const movePiece = (req, res) => {
-	const game = req.body.game;
-	const dest_x = req.body.x;
-	const dest_y = req.body.y;
-	db.collection('games').doc(game).get().then(doc => {
+const api = (req, res) => {
+	const gameId = req.body.game;
+	const x = req.body.x;
+	const y = req.body.y;
+	db.collection('games').doc(gameId).get().then(doc => {
 		if (doc.exists) {
+			const game = doc.data();
 			let player_index = -1;
-			for (let i = 0; i < doc.data().players.length; ++i) {
-				if (doc.data().players[i] === req.ip) {
+			for (let i = 0; i < game.players.length; ++i) {
+				if (game.players[i] === req.ip) {
 					player_index = i;
 					break;
 				}
@@ -28,7 +29,8 @@ const movePiece = (req, res) => {
 				res.status(403).send('you\'re not playing this game!');
 				return;
 			}
-			let json_string = JSON.stringify(doc.data());
+			game.heights[5 * x + y] += 1;
+			let json_string = JSON.stringify(game);
 			res.status(200).send({
 				board: JSON.parse(json_string),
 			});
@@ -40,8 +42,8 @@ const movePiece = (req, res) => {
 	});
 };
 
-exports.movePiece = (req, res) => {
+exports.api = (req, res) => {
 	cors()(req, res, () => {
-		movePiece(req, res);
+		api(req, res);
 	});
 };
