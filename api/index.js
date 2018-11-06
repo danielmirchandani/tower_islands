@@ -5,13 +5,18 @@
  * @param {!express:Response} res HTTP response context.
  */
 const cors = require('cors');
+const express = require('express');
 const Firestore = require('@google-cloud/firestore');
+
 const db = new Firestore();
 db.settings({
 	timestampsInSnapshots: true
 });
 
-const api = (req, res) => {
+const app = express();
+app.use(cors());
+
+app.post('/build-tower', (req, res) => {
 	const gameId = req.body.game;
 	const x = req.body.x;
 	const y = req.body.y;
@@ -40,10 +45,6 @@ const api = (req, res) => {
 	}).catch(err => {
 		res.status(500).send(err);
 	});
-};
+});
 
-exports.api = (req, res) => {
-	cors()(req, res, () => {
-		api(req, res);
-	});
-};
+exports.api = app;

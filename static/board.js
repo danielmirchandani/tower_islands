@@ -14,7 +14,7 @@ for (x = 0; x < 5; ++x) {
 
 $(canvas).on('click', function(e) {
 	$.post(
-		'https://us-central1-tower-islands.cloudfunctions.net/api', {
+		'https://us-central1-tower-islands.cloudfunctions.net/api/build-tower', {
 			game: 'hQBb8ikf2fEs8s706bhr',
 			x: e.clientX,
 			y: e.clientY,
