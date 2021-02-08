@@ -13,13 +13,15 @@ for (x = 0; x < 5; ++x) {
 }
 
 $(canvas).on('click', function(e) {
-	$.post(
-		'https://us-central1-tower-islands.cloudfunctions.net/api/build-tower', {
-			game: 'hQBb8ikf2fEs8s706bhr',
+	$.ajax({
+		url: 'https://us-central1-tower-islands.cloudfunctions.net/api/game/hQBb8ikf2fEs8s706bhr',
+		method: 'PUT',
+		data: {
 			x: e.clientX,
 			y: e.clientY,
 		},
-		function(response) {
+		success: function(response) {
 			console.log(response);
-		});
+		},
+    });
 });

@@ -24,9 +24,11 @@ module.exports = (req, res, next) => {
 				board: JSON.parse(json_string),
 			});
 		} else {
+			console.log('Tried to find game', gameId);
 			res.status(404).send('game does not exist');
 		}
 	}).catch(err => {
+		console.log('Error text', err);
 		res.status(500).send(err);
 	});
 
