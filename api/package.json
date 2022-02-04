@@ -4,7 +4,7 @@
 	"dependencies": {
 		"@google-cloud/firestore": "^4.2.0",
 		"cors": "^2.8.4",
-		"express": "^4.17.1"
+		"express": "^4.17.2"
 	},
 	"description": "Tower Islands API on top of Google Cloud Functions (GCF)",
 	"license": "MIT",
