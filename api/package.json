@@ -2,7 +2,7 @@
 	"name": "tower-islands-api",
 	"version": "0.0.1",
 	"dependencies": {
-		"@google-cloud/firestore": "^5.0.2",
+		"@google-cloud/firestore": "^6.4.1",
 		"cors": "^2.8.4",
 		"express": "^4.18.1"
 	},
