@@ -1,15 +1,12 @@
 {
 	"name": "tower-islands-api",
 	"version": "0.0.1",
-	"dependencies": {
-		"@google-cloud/firestore": "^5.0.2",
-		"cors": "^2.8.4",
-		"express": "^4.18.1"
-	},
+	"dependencies": {},
 	"description": "Tower Islands API on top of Google Cloud Functions (GCF)",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/danielmirchandani/tower_islands.git"
+		"url": "https://github.com/danielmirchandani/tower_islands.git",
+		"directory": "api"
 	}
 }

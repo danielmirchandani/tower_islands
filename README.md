@@ -1,2 +1,3 @@
 # tower_islands
-Play-by-email the board game Santorini
+What used to be play-by-email the board game Santorini. Go check out
+BoardGameArena's version instead.
