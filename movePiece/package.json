@@ -1,12 +1,12 @@
 {
-	"name": "tower-islands-api",
+	"name": "tower-islands-movepiece",
 	"version": "0.0.1",
 	"dependencies": {},
-	"description": "Tower Islands API on top of Google Cloud Functions (GCF)",
+	"description": "Dummy package for GitHub to rescan dependencies",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/danielmirchandani/tower_islands.git",
-		"directory": "api"
+        "directory": "movePiece"
 	}
 }
