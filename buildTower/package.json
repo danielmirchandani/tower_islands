@@ -1,0 +1,12 @@
+{
+	"name": "tower-islands-buildtower",
+	"version": "0.0.1",
+	"dependencies": {},
+	"description": "Dummy package for GitHub to rescan dependencies",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/danielmirchandani/tower_islands.git",
+        "directory": "buildtower"
+	}
+}
